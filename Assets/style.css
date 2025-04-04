@@ -481,6 +481,12 @@ body {
         height: 25px;
     }
 }
+@media (max-width: 600px) { 
+    .casas-container {
+        grid-template-columns: repeat(2, 1fr); /* Força 2 colunas */
+    }
+}
+
 
 @media (max-width: 480px) {
     .escola {
@@ -503,6 +509,7 @@ body {
 
     .casas-container {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: 1fr; /* Força 1 coluna */
         gap: 10px;
     }
 
