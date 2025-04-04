@@ -1,3 +1,4 @@
+/* Reset e Fontes (Mantenha como está) */
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +8,10 @@
 
 body {
     background-color: #f0f0f0;
+    overflow-x: hidden; /* Evita barras de rolagem horizontais indesejadas */
 }
 
-/* Cabeçalho */
+/* Cabeçalho (Mantenha como está, parece responsivo) */
 .cabecalho {
     background: linear-gradient(135deg, #740001 0%, #1a1a1a 100%);
     color: #eeba30;
@@ -60,22 +62,19 @@ body {
 /* Seção Escola */
 .escola {
     background-image: url('./Gifs/casa_hogwarts.gif');
-    /* Adiciona o GIF como fundo */
     background-size: cover;
-    /* Garante que o fundo cubra todo o elemento */
     background-position: center;
-    /* Centraliza o fundo */
     background-repeat: no-repeat;
-    /* Evita a repetição do fundo */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 5% 60px;
+    padding: 80px 5% 40px; /* Ajuste no padding vertical para telas menores */
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     color: #f0f0f0;
     text-align: center;
+    min-height: auto; /* Permite que a altura se ajuste ao conteúdo em telas menores */
 }
 
 .escola::before {
@@ -86,31 +85,24 @@ body {
     width: 100%;
     height: 100%;
     background: url('./Assets/Imagens/hogwarts-crest-white.png') center/contain no-repeat;
-    /* Versão branca do brasão */
     opacity: 0.1;
     pointer-events: none;
     border-radius: 15px;
-    /* Opcional: Garante que o ::before também tenha as bordas arredondadas */
 }
 
 .escola-div-conteudo {
-    width: 80%;
-    /* Aumenta a largura para melhor visualização no card */
-    padding: 40px;
-    /* Adiciona um pouco de padding interno */
+    width: 90%; /* Aumenta a largura em telas menores */
+    padding: 30px; /* Reduz o padding em telas menores */
     background-color: rgba(0, 0, 0, 0.6);
-    /* Adiciona uma camada escura para melhor contraste do texto */
     border-radius: 10px;
-    /* Opcional: Arredonda as bordas do conteúdo */
     position: relative;
     z-index: 2;
 }
 
 .titulo-escola {
-    padding: 24px 0;
+    padding: 20px 0; /* Reduz o padding vertical */
     color: #eeba30;
-    /* Altera a cor do título para combinar */
-    font-size: 42px;
+    font-size: 36px; /* Reduz o tamanho da fonte */
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
     position: relative;
 }
@@ -118,26 +110,25 @@ body {
 .titulo-escola::after {
     content: "";
     display: block;
-    width: 100px;
-    height: 4px;
+    width: 80px; /* Reduz a largura da linha */
+    height: 3px; /* Reduz a altura da linha */
     background: #eeba30;
-    /* Altera a cor da linha para combinar */
-    margin: 10px auto 0;
+    margin: 8px auto 0; /* Reduz a margem */
     border-radius: 2px;
 }
 
 .texto-um-escola,
 .texto-dois-escola {
-    padding: 12px 0;
+    padding: 10px 0; /* Reduz o padding vertical */
     color: #d3d3d3;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px; /* Reduz o tamanho da fonte */
+    line-height: 1.5; /* Ajusta a altura da linha */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Seção Casas */
 .casas {
-    padding: 60px 5%;
+    padding: 40px 5%; /* Reduz o padding vertical */
     background-color: #f9f5e8;
     background-image: url('./Assets/Imagens/parchment-texture.jpg');
     background-size: cover;
@@ -146,34 +137,35 @@ body {
 
 .casas-titulo {
     text-align: center;
-    font-size: 42px;
+    font-size: 36px; /* Reduz o tamanho da fonte */
     color: #5d2906;
-    margin-bottom: 50px;
+    margin-bottom: 30px; /* Reduz a margem inferior */
     position: relative;
 }
 
 .casas-titulo::after {
     content: "";
     display: block;
-    width: 150px;
-    height: 4px;
+    width: 120px; /* Reduz a largura da linha */
+    height: 3px; /* Reduz a altura da linha */
     background: linear-gradient(to right, #740001, #d3a625);
-    margin: 15px auto 0;
+    margin: 10px auto 0; /* Reduz a margem */
     border-radius: 2px;
 }
 
 .casas-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta o minmax para telas menores */
+    gap: 20px; /* Reduz o gap */
+    max-width: 100%; /* Permite ocupar toda a largura */
     margin: 0 auto;
+    padding: 0 10px; /* Adiciona um pequeno padding interno */
 }
 
 .casa-card {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-    padding: 25px;
+    padding: 20px; /* Reduz o padding interno */
     text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -181,52 +173,37 @@ body {
 }
 
 .casa-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-#grifinoria:hover {
-    border-color: #740001;
-}
-
-#sonserina:hover {
-    border-color: #1a472a;
-}
-
-#corvinal:hover {
-    border-color: #0e1a40;
-}
-
-#lufalufa:hover {
-    border-color: #ecb939;
+    transform: translateY(-5px); /* Reduz o efeito hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Reduz a sombra hover */
 }
 
 .casa-imagem {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
+    width: 80px; /* Reduz o tamanho da imagem */
+    height: 80px; /* Reduz o tamanho da imagem */
+    margin: 0 auto 15px; /* Reduz a margem inferior */
     transition: transform 0.3s ease;
 }
 
 .casa-card:hover .casa-imagem {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Reduz o efeito hover da imagem */
 }
 
 .casa-card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 20px; /* Reduz o tamanho da fonte */
+    margin-bottom: 10px; /* Reduz a margem inferior */
     color: #5d2906;
 }
 
 .casa-card p {
     color: #555;
-    line-height: 1.6;
+    line-height: 1.5; /* Ajusta a altura da linha */
+    font-size: 14px; /* Reduz o tamanho da fonte */
 }
 
 /* Seção Estudantes */
 .estudantes {
     background-color: #f5f5f5;
-    padding: 60px 5%;
+    padding: 40px 5%; /* Reduz o padding vertical */
     background-image: url('./Assets/Imagens/parchment-texture.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -235,33 +212,32 @@ body {
 
 .estudante-título {
     text-align: center;
-    padding: 20px 0 40px;
-    font-size: 42px;
+    padding: 15px 0 30px; /* Reduz o padding vertical */
+    font-size: 36px; /* Reduz o tamanho da fonte */
     color: #5d2906;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px; /* Reduz o espaçamento entre letras */
     position: relative;
 }
 
 .estudante-título::after {
     content: "";
     display: block;
-    width: 150px;
-    height: 4px;
+    width: 120px; /* Reduz a largura da linha */
+    height: 3px; /* Reduz a altura da linha */
     background: linear-gradient(to right, #740001, #d3a625);
-    margin: 15px auto 0;
+    margin: 10px auto 0; /* Reduz a margem */
     border-radius: 2px;
 }
 
 .estudantes-todos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Alterado para 3 colunas */
-    grid-template-rows: repeat(2, auto);
-    /* Adicionado para 2 linhas */
-    gap: 30px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta o minmax para telas menores */
+    grid-template-rows: auto; /* Permite ajuste automático das linhas */
+    gap: 15px; /* Reduz o gap */
+    max-width: 100%; /* Permite ocupar toda a largura */
     margin: 0 auto;
+    padding: 0 10px; /* Adiciona um pequeno padding interno */
 }
 
 .estudante-container {
@@ -269,27 +245,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 24px;
+    gap: 8px; /* Reduz o gap */
+    padding: 15px; /* Reduz o padding interno */
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease, transform 0.3s ease; /* Adicione 'transform' na transição */
+    transition: all 0.3s ease, transform 0.3s ease;
     border: 1px solid #d3a625;
-    transform-style: preserve-3d; /* Importante para efeitos 3D */
+    transform-style: preserve-3d;
 }
 
 .estudante-container:hover {
-    transform: translateY(-10px) rotateY(10deg) rotateX(-5deg); /* Inclina o card */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) rotateY(5deg) rotateX(-3deg); /* Reduz o efeito hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Reduz a sombra hover */
 }
 
 .imagem-estudante {
-    width: 150px;
-    height: 150px;
+    width: 100px; /* Reduz o tamanho da imagem */
+    height: 100px; /* Reduz o tamanho da imagem */
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #d3a625;
+    border: 3px solid #d3a625; /* Reduz a largura da borda */
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -297,25 +273,25 @@ body {
 
 .imagem-estudante:hover {
     border-color: #740001;
-    transform: scale(1.05);
+    transform: scale(1.03); /* Reduz o efeito hover da imagem */
 }
 
 .estudante-nome {
-    font-size: 20px;
+    font-size: 16px; /* Reduz o tamanho da fonte */
     font-weight: bold;
     color: #5d2906;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5px; /* Reduz a margem superior */
 }
 
 .estudante-casa {
-    width: 50px;
-    height: 50px;
+    width: 30px; /* Reduz o tamanho do logo da casa */
+    height: 30px; /* Reduz o tamanho do logo da casa */
     transition: transform 0.3s ease;
 }
 
 .estudante-casa:hover {
-    transform: scale(1.2);
+    transform: scale(1.1); /* Reduz o efeito hover do logo da casa */
 }
 
 .gif-card {
@@ -333,7 +309,7 @@ body {
     border-radius: 15px;
     border: 2px solid #d3a625;
     animation: fadeIn 0.3s ease;
-    transform-style: preserve-3d; /* Garante que o conteúdo 3D dentro funcione */
+    transform-style: preserve-3d;
 }
 
 @keyframes fadeIn {
@@ -347,8 +323,8 @@ body {
 }
 
 .gif-imagem {
-    width: 90%;
-    height: 90%;
+    max-width: 90%; /* Garante que o GIF não ultrapasse a largura */
+    max-height: 90%; /* Garante que o GIF não ultrapasse a altura */
     object-fit: contain;
     border-radius: 10px;
 }
@@ -357,7 +333,7 @@ body {
 .rodape {
     background: linear-gradient(135deg, #1a1a1a 0%, #740001 100%);
     text-align: center;
-    padding: 30px 0;
+    padding: 20px 0; /* Reduz o padding vertical */
     position: relative;
 }
 
@@ -367,13 +343,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px; /* Reduz a altura da linha */
     background: linear-gradient(to right, #d3a625, #740001, #d3a625);
 }
 
 .imagem-rodape {
-    width: 200px;
-    padding: 12px 0;
+    width: 150px; /* Reduz o tamanho da imagem */
+    padding: 10px 0; /* Reduz o padding vertical */
     filter: brightness(0) invert(1);
     opacity: 0.8;
     transition: opacity 0.3s ease;
@@ -387,27 +363,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 10px; /* Reduz a margem superior */
 }
 
 .rodape div img {
-    width: 30px;
-    margin: 0 10px;
+    width: 25px; /* Reduz o tamanho dos ícones */
+    margin: 0 8px; /* Reduz a margem */
     transition: transform 0.3s ease;
 }
 
 .rodape div img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1); /* Reduz o efeito hover */
 }
 
 .rodape-texto {
     color: #eeba30;
-    font-size: 16px;
-    margin-left: 10px;
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    margin-left: 8px; /* Reduz a margem */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Overlay da carta */
+/* Overlay da carta (Mantenha como está, parece responsivo) */
 .carta-overlay {
     position: fixed;
     top: 0;
@@ -434,59 +410,151 @@ body {
 }
 
 .carta-gif {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* A imagem cobre todo o container, pode cortar partes */
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
     animation: voar 2s ease-in-out;
 }
 
 @keyframes voar {
     0% {
-        transform: translateY(-100px) rotate(-15deg) scale(0.8); /* Começa um pouco menor */
+        transform: translateY(-100px) rotate(-15deg) scale(0.5);
         opacity: 0;
     }
+
     70% {
-        transform: translateY(20px) rotate(5deg) scale(1.2); /* Aumenta um pouco */
+        transform: translateY(20px) rotate(5deg) scale(1.1);
         opacity: 1;
     }
+
     100% {
-        transform: translateY(0) rotate(0) scale(1); /* Tamanho normal */
+        transform: translateY(0) rotate(0) scale(1);
         opacity: 1;
     }
 }
 
-/* Responsividade */
+/* Responsividade (Media Queries) */
 @media (max-width: 768px) {
     .escola {
-        flex-direction: column;
-        text-align: center;
-        padding: 80px 0 40px;
-        min-height: auto;
+        padding: 60px 5% 30px;
     }
 
-    .escola-div-conteudo {
-        width: 80%;
-        margin: 20px auto;
+    .titulo-escola {
+        font-size: 30px;
+    }
+
+    .casas-titulo {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .casas-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .casa-card h3 {
+        font-size: 18px;
+    }
+
+    .estudante-título {
+        font-size: 30px;
+        padding: 10px 0 20px;
     }
 
     .estudantes-todos {
-        grid-template-columns: repeat(2, 1fr);
-        /* Ajusta para 2 colunas em telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .imagem-estudante {
+        width: 80px;
+        height: 80px;
+    }
+
+    .estudante-nome {
+        font-size: 14px;
+    }
+
+    .estudante-casa {
+        width: 25px;
+        height: 25px;
     }
 }
 
 @media (max-width: 480px) {
-    .escola-div-conteudo {
-        width: 90%;
-        padding: 20px;
+    .escola {
+        padding: 40px 5% 20px;
     }
 
     .titulo-escola {
-        font-size: 32px;
+        font-size: 24px;
+    }
+
+    .texto-um-escola,
+    .texto-dois-escola {
+        font-size: 14px;
+    }
+
+    .casas-titulo {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .casas-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .casa-card {
+        padding: 15px;
+    }
+
+    .casa-card h3 {
+        font-size: 16px;
+    }
+
+    .casa-card p {
+        font-size: 12px;
+    }
+
+    .estudante-título {
+        font-size: 24px;
+        padding: 5px 0 15px;
     }
 
     .estudantes-todos {
-        grid-template-columns: 1fr;
-        /* Ajusta para 1 coluna em telas ainda menores */
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 8px;
+    }
+
+    .imagem-estudante {
+        width: 60px;
+        height: 60px;
+    }
+
+    .estudante-nome {
+        font-size: 12px;
+    }
+
+    .rodape-texto {
+        font-size: 12px;
+    }
+
+    .cabecalho {
+        padding: 15px 5%;
+    }
+
+    .cabecalho-lista {
+        gap: 10px;
+    }
+
+    .cabecalho-lista a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .imagem-cabecalho {
+        width: 80px;
     }
 }
